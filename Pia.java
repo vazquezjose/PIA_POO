@@ -12,38 +12,38 @@ public class Pia {
 
         do {
             do {
-                System.out.println("ingresa una opcion\n1)iniciar sesion\n2)contraseñaolvidada\n3)registrarse\n4)salir");
+                System.out.println("| BIENVENIDO A VAPOR |\n |Ingresa Una Opcion|\n-----------------------\n1)Iniciar Sesion\n2)Contraseña Olvidada\n3)Registrarse\n4)Salir\n-----------------------");
                 opcion = escaner.nextInt();
                 escaner.nextLine();
             } while (opcion < 1 || opcion > 4);
             switch (opcion) {
                 case 1:
-                    System.out.println("ingresa tu nombre de usuario/correo electronico");
+                    System.out.println("| Ingresa Tu Nombre de Usuario/Correo Electronico |");
                     nombre = escaner.nextLine();
                     escaner.nextLine();
-                    System.out.println("ingresa tu contraseña");
+                    System.out.println("| Ingresa Tu Contraseña |");
                     contraseña = escaner.nextLine();
                     escaner.nextLine();
                     if (menu.iniciarSesion(nombre, contraseña)) {
                         //ingresar
                     } else {
-                        System.out.println("nombre/correo o contraseña equivocada\n");
+                        System.out.println("            | ATENCION!!! |\n| Nombre/Correo o Contraseña Equivocada!!! |\n");
                     }
                     break;
                 case 2:
-                    System.out.println("ingresa tu nombre de usuario/correo electronico");
+                    System.out.println("| Ingresa Tu Nombre de Usuario/Correo Electronico |");
                     nombre = escaner.nextLine();
                     escaner.nextLine();
                     menu.contraseñaOlvidada(nombre);
                     break;
                 case 3:
-                    System.out.println("ingrese el nommbre de usuario");
+                    System.out.println("| Ingrese El Nommbre De Usuario |");
                     nombre = escaner.nextLine();
                     escaner.nextLine();
-                    System.out.println("ingrese su correo electronico");
+                    System.out.println("| Ingrese Su Correo Electronico |");
                     correo = escaner.nextLine();
                     escaner.nextLine();
-                    System.out.println("ingrese la contraseña");
+                    System.out.println("| Ingrese La Contraseña |");
                     contraseña = escaner.nextLine();
                     escaner.nextLine();
                     menu.setNombre(nombre);
