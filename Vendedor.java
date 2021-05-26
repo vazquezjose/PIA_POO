@@ -46,6 +46,17 @@ public class Vendedor extends Menu {
         this.productos = productos;
     }
 
+	public Producto getProductoPorSku(long sku) {
+        Producto productoEncontrado = null;
+        for (Producto producto : productos) {
+            if (producto.getSku() == sku) {
+                productoEncontrado = producto;
+                break;
+            }
+        }
+        return productoEncontrado;
+    }
+
     public void mostrarProductos() {    // este usa toString()
         for (Producto producto : this.productos) {
             System.out.print(producto.toString() + "\n");

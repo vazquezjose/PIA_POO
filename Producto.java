@@ -38,12 +38,20 @@ class Producto {
         return "SKU: " + this.sku + " Nombre: " + nombre;
     }
 
+	public long getSku() {
+        return this.sku;
+    }
+
     public String getNombre() {
         return this.nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+	public String getResumen() {
+        return this.resumen;
     }
     
     public int getStock() {
