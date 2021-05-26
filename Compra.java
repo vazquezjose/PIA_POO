@@ -6,10 +6,10 @@ import java.time.LocalTime;
 public class Compra {
     private LocalDate fechaDeCompra;
     private LocalTime horaDeCompra;
-    private Cliente cliente;
+    private String cliente;
     private Producto productoComprado;
     
-    public Compra(LocalDate fechaDeCompra, LocalTime horaDeCompra, Cliente cliente, Producto productoComprado) {
+    public Compra(LocalDate fechaDeCompra, LocalTime horaDeCompra, String cliente, Producto productoComprado) {
         this.fechaDeCompra = fechaDeCompra;
         this.horaDeCompra = horaDeCompra;
         this.cliente = cliente;
@@ -19,7 +19,7 @@ public class Compra {
     @Override
     public String toString() {
         return "========== Vapor - TICKET DE COMPRA ==========\n"
-        + "Hola, " + cliente.getNombre() + "\n"
+        + "Hola, " + cliente + "\n"
         + "¡Muchas gracias por tu preferencia!\n\n\n"
         + "Producto: " + productoComprado.getNombre() + "\n"
         + "Total: " + productoComprado.getPrecio() + "\n"
@@ -43,7 +43,7 @@ public class Compra {
         this.horaDeCompra = horaDeCompra;
     }
     
-    public Cliente getCliente() {
+    public String getCliente() {
         return this.cliente;
     }
     
