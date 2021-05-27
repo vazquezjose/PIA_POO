@@ -111,10 +111,10 @@ public class Vendedor extends Menu {
                 case 1:
                     Compra compraNueva = Compra.generarCompra(this);
                     compras.add(compraNueva);
-                    compraNueva.toString();
+                    System.out.println(compraNueva.toString());
                     break;
                 case 2:
-					mostrarListaDeProductos();
+                    mostrarListaDeProductos();
                     break;
                 default:
             }

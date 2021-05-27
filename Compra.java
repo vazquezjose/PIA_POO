@@ -69,21 +69,20 @@ public class Compra {
         Producto productoComprado = null;
         
         String introduccion;
-        
         do {
             System.out.println("¿Cuál es el nombre del cliente?");
             nombreDelCliente = escaner.nextLine();
             if (nombreDelCliente.length() == 0)
                 System.out.println("El nombre introducido es inválido.");
         } while (nombreDelCliente.length() == 0);
-        
+
         do {
             System.out.println("¿Cuál es el número de teléfono del cliente?");
             introduccion = escaner.nextLine();
             telefonoDelCliente = Integer.valueOf(introduccion);
         }
         while (telefonoDelCliente == 0);
-        
+
         do {
             do {
                 System.out.println("¿Cuál es el SKU del juego que se desea comprar?");
@@ -93,13 +92,16 @@ public class Compra {
                     System.out.println("El SKU introducido es inválido.");
             } while (productoComprado == null);
             
-            System.out.println("¿El producto seleccionado es '" + productoComprado.getNombre() + "'?\n1) Sí\n2) No");
-            introduccion = escaner.nextLine();
-            opcion1 = Integer.valueOf(introduccion);
-            
-            if (opcion1 < 1 || opcion1 > 2)
-                System.out.println("Opción inválida.");
-        } while (opcion1 < 1 || opcion1 > 2);
+            do {
+                System.out.println("¿El producto seleccionado es '" + productoComprado.getNombre() + "'?\n1) Sí\n2) No");
+                introduccion = escaner.nextLine();
+                opcion1 = Integer.valueOf(introduccion);
+
+                if (opcion1 < 1 || opcion1 > 2)
+                    System.out.println("Opción inválida.");
+            } while (opcion1 < 1 || opcion1 > 2);
+        } while (opcion1 == 2);
+        
         Compra compra = new Compra(fechaDeCompra, horaDeCompra, nombreDelCliente, telefonoDelCliente, productoComprado);
         return compra;
     }
