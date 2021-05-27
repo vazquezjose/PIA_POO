@@ -114,7 +114,7 @@ public class Vendedor extends Menu {
                     compraNueva.toString();
                     break;
                 case 2:
-                  mostrarListaDeProductos();
+					mostrarListaDeProductos();
                     break;
                 default:
             }
