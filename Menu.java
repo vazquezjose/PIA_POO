@@ -106,7 +106,7 @@ public class Menu {
         } catch (IOException error) {
 			System.out.println("hubo un error en el archivo\n");
         }  
-        return rol;
+        return rol == 0 ? 0 : 1;
     } 
 
     public String getNombre() {
