@@ -6,6 +6,7 @@ public class Pia {
     public static void main(String[] args) {
         Scanner escaner = new Scanner(System.in);
         Menu menu = new Menu();
+        Vendedor producto = new Vendedor();
         String nombre, correo, contraseña;
 
         int opcion;
@@ -25,7 +26,9 @@ public class Pia {
                     contraseña = escaner.nextLine();
                     escaner.nextLine();
                     if (menu.iniciarSesion(nombre, contraseña)) {
-                        //ingresar
+                         if(menu.getRol(nombre)==0){
+                            producto.Type();
+                        }
                     } else {
                         System.out.println("            | ATENCION!!! |\n| Nombre/Correo o Contraseña Equivocada!!! |\n");
                     }

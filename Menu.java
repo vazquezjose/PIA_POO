@@ -11,6 +11,7 @@ public class Menu {
     private String nombre;
     private String correo;
     private String contraseña;
+    private int rol;
 
     public boolean iniciarSesion(String usuario, String contraseña) {
         try {
@@ -89,6 +90,30 @@ public class Menu {
             System.out.println("hubo un error en el archivo\n");
         }
     }
+
+        public int getRol(String nombre){   
+        try{
+            CsvReader comprobarExistenciaUsuario = new CsvReader("Usuarios.csv");
+            while (comprobarExistenciaUsuario.readRecord()) {
+                String nombreUsuario = comprobarExistenciaUsuario.get(0);
+                String correoUsuario = comprobarExistenciaUsuario.get(1);
+                String contraseñaUsuario = comprobarExistenciaUsuario.get(2);
+                String StrRol = comprobarExistenciaUsuario.get(3);
+                int iRol; 
+                rol = Integer.parseInt(StrRol);
+              
+                }
+            comprobarExistenciaUsuario.close();
+            }
+                    catch (IOException error) {
+            System.out.println("hubo un error en el archivo\n");
+        }  
+        if(0==rol){
+            return 0;
+        } else {
+            return 1;
+        }
+    } 
 
     public String getNombre() {
         return nombre;

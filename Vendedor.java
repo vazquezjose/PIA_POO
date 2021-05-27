@@ -93,29 +93,23 @@ public class Vendedor extends Menu {
     return caja/100;
   } */
 
-    /**
-     *
-     */
-    public static void Type() {
+     public void Type() {
         Scanner escaner = new Scanner(System.in);
         int opcion;
         do {
             do {
-                System.out.println("Seleccione una opción\n1) Agregar producto\n2) Mostrar lista de productos\n3) Consultar inventario\n4) Cerrar sesión");
+                System.out.println("Seleccione una opción\n1) Agregar producto\n2) Mostrar lista de productos\n3) Cerrar sesión");
                 opcion = escaner.nextInt();
-            } while (opcion < 1 || opcion > 4);
+            } while (opcion < 1 || opcion > 3);
             switch (opcion) {
                 case 1:
                     
                     break;
                 case 2:
-                    //this.mostrarListaDeProductos();
-                    break;
-                case 3:
-                    
+                  mostrarListaDeProductos();
                     break;
                 default:
             }
-        } while (opcion != 4);
+        } while (opcion != 3);
     }
 }
