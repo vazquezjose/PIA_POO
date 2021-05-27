@@ -101,12 +101,10 @@ public class Menu {
                 String StrRol = comprobarExistenciaUsuario.get(3);
                 int iRol; 
                 rol = Integer.parseInt(StrRol);
-              
-                }
+			}
             comprobarExistenciaUsuario.close();
-            }
-                    catch (IOException error) {
-            System.out.println("hubo un error en el archivo\n");
+        } catch (IOException error) {
+			System.out.println("hubo un error en el archivo\n");
         }  
         if(0==rol){
             return 0;

@@ -1,5 +1,11 @@
 package piapoo;
 
+import com.csvreader.CsvReader;
+import com.csvreader.CsvWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 class Producto {
     private long sku;
     private String nombre;
@@ -25,7 +31,40 @@ class Producto {
         this.resumen = resumen;
         this.stock = stock;
         this.precio = precio;
+       guardarProducto(sku,nombre,resumen,stock,precio);
     }
+
+    private void guardarProducto(long sku, String nombre, String resumen, int stock, double precio) {
+        File Productos = new File("Productos.csv");
+        try {
+            CsvWriter producto = new CsvWriter(new FileWriter("Productos.csv", true), ',');
+            CsvReader comprobarExistenciaProducto = new CsvReader("Productos.csv");
+            while (comprobarExistenciaProducto.readRecord()) {
+                String clave = comprobarExistenciaProducto.get(0);
+                String nombreProducto = comprobarExistenciaProducto.get(1);
+                String resumenProducto = comprobarExistenciaProducto.get(2);
+                String cantidadStock = comprobarExistenciaProducto.get(3);
+                String precioProducto = comprobarExistenciaProducto.get(4);
+                if (nombre.equals(nombreProducto) || sku == Long.valueOf(clave)) {
+                    System.out.println(" nombre del producto o clave ya existente\n");
+                    comprobarExistenciaProducto.close();
+                    producto.close();
+                    return;
+                }
+            }
+            producto.write(String.valueOf(sku));
+            producto.write(nombre);
+            producto.write(resumen);
+            producto.write(String.valueOf(stock));
+            producto.write(String.valueOf(precio));
+            producto.endRecord();
+            comprobarExistenciaProducto.close();   
+            producto.close();
+        } catch (IOException error) {
+            System.out.println("hubo un error en el archivo\n");
+        }
+    }
+
 
     @Override
     public String toString() {

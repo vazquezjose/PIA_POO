@@ -2,6 +2,10 @@ package piapoo;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Scanner;
+import com.csvreader.CsvReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Vendedor extends Menu {
     private Producto productos[] = null;
