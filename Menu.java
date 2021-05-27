@@ -100,7 +100,7 @@ public class Menu {
                 String contraseñaUsuario = comprobarExistenciaUsuario.get(2);
                 String StrRol = comprobarExistenciaUsuario.get(3);
                 int iRol; 
-                rol = Integer.parseInt(StrRol);
+                rol = Integer.valueOf(StrRol);
 			}
             comprobarExistenciaUsuario.close();
         } catch (IOException error) {
