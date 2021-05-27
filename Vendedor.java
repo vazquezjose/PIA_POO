@@ -1,9 +1,11 @@
 package piapoo;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Vendedor extends Menu {
     private Producto productos[] = null;
+    private ArrayList<Compra> compras = new ArrayList<Compra>();
     private double caja;
 
     public Vendedor() {
@@ -46,7 +48,7 @@ public class Vendedor extends Menu {
         this.productos = productos;
     }
 
-	public Producto getProductoPorSku(long sku) {
+    public Producto getProductoPorSku(long sku) {
         Producto productoEncontrado = null;
         for (Producto producto : productos) {
             if (producto.getSku() == sku) {
@@ -98,15 +100,15 @@ public class Vendedor extends Menu {
         int opcion;
         do {
             do {
-                System.out.println("Seleccione una opción\n1) Agregar producto\n2) Mostrar lista de productos\n3) Cerrar sesión");
+                System.out.println("Seleccione una opción\n1) Realizar compra\n2) Mostrar lista de productos\n3) Cerrar sesión");
                 opcion = escaner.nextInt();
             } while (opcion < 1 || opcion > 3);
             switch (opcion) {
                 case 1:
-                    
+                    compras.add(Compra.generarCompra(this));
                     break;
                 case 2:
-                  mostrarListaDeProductos();
+					mostrarListaDeProductos();
                     break;
                 default:
             }

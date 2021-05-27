@@ -93,7 +93,7 @@ public class Compra {
                     System.out.println("El SKU introducido es inválido.");
             } while (productoComprado == null);
             
-            System.out.println("¿El producto seleccionado es '" + productoComprado.getNombre() + "'?\n1- Si\n2-No");
+            System.out.println("¿El producto seleccionado es '" + productoComprado.getNombre() + "'?\n1) Sí\n2) No");
             introduccion = escaner.nextLine();
             opcion1 = Integer.valueOf(introduccion);
             
