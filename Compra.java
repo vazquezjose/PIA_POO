@@ -100,6 +100,11 @@ public class Compra {
             if (opcion1 < 1 || opcion1 > 2)
                 System.out.println("Opción inválida.");
         } while (opcion1 < 1 || opcion1 > 2);
+      
+
+
+
+
         
         Compra compra = new Compra(fechaDeCompra, horaDeCompra, nombreDelCliente, telefonoDelCliente, productoComprado);
         return compra;

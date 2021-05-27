@@ -91,8 +91,8 @@ public class Menu {
         }
     }
 
-        public int getRol(String nombre){   
-        try{
+    public int getRol(String nombre){   
+        try {
             CsvReader comprobarExistenciaUsuario = new CsvReader("Usuarios.csv");
             while (comprobarExistenciaUsuario.readRecord()) {
                 String nombreUsuario = comprobarExistenciaUsuario.get(0);
@@ -106,11 +106,7 @@ public class Menu {
         } catch (IOException error) {
 			System.out.println("hubo un error en el archivo\n");
         }  
-        if(0==rol){
-            return 0;
-        } else {
-            return 1;
-        }
+        return rol;
     } 
 
     public String getNombre() {
