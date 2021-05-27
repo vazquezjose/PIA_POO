@@ -105,10 +105,12 @@ public class Vendedor extends Menu {
             } while (opcion < 1 || opcion > 3);
             switch (opcion) {
                 case 1:
-                    compras.add(Compra.generarCompra(this));
+                    Compra compraNueva = Compra.generarCompra(this);
+                    compras.add(compraNueva);
+                    compraNueva.toString();
                     break;
                 case 2:
-					mostrarListaDeProductos();
+                  mostrarListaDeProductos();
                     break;
                 default:
             }
