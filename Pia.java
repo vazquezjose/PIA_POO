@@ -26,7 +26,7 @@ public class Pia {
                     contraseña = escaner.nextLine();
                     escaner.nextLine();
                     if (menu.iniciarSesion(nombre, contraseña)) {
-                         if(menu.getRol(nombre)==0){
+                         if(menu.getRol(nombre)==1){
                             producto.Type();
                         }
                     } else {
